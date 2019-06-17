@@ -42,7 +42,11 @@ module gamecontrol(CLOCK_50, reset, VGA_R, VGA_G, VGA_B, VGA_HS, VGA_VS, VGA_CLO
         if (reset) begin
             red = 0; green = 0; blue = 0;
         end else begin
-            red = 0; green = 255; blue = 0;
+            if (visible) begin
+                red = 0; green = 255; blue = 0;
+            end else begin
+                red = 0; green = 0; blue = 0;
+            end
         end
     end
 
